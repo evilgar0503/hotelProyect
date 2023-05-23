@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+body {
+    font-family: "Lato", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+.portada {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://www.telemadrid.es/2022/06/24/noticias/madrid/_2462763751_34501940_1300x731.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+
+@keyframes word {
+    0% {
+        transform: translateY(100%);
+    }
+    15% {
+        transform: translateY(-10%);
+        animation-timing-function: ease-out;
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    40%,
+    100% {
+        transform: translateY(-110%);
+    }
+}
+
+.animate-word {
+    animation: word 7s infinite;
+}
+.animate-word-delay-1 {
+    animation: word 7s infinite;
+    animation-delay: -1.4s;
+}
+.animate-word-delay-2 {
+    animation: word 7s infinite;
+    animation-delay: -2.8s;
+}
+
+/*
+  Botón flotante
+  */
+.btn-flotante {
+    font-size: 16px; /* Cambiar el tamaño de la tipografia */
+    text-transform: uppercase; /* Texto en mayusculas */
+    font-weight: bold; /* Fuente en negrita o bold */
+    color: #ffffff; /* Color del texto */
+    border-radius: 5px; /* Borde del boton */
+    letter-spacing: 2px; /* Espacio entre letras */
+    background-color: #e91e63; /*Color de fondo*/
+    padding: 18px 30px; /* Relleno del boton */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+.btn-flotante:hover {
+    background-color: #000; /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+}
+
+/*
+Scroll Down
+*/
+#scroll-down-animation {
+    position: absolute;
+    top: 90%;
+    left: 4%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    color: #fff;
+    font-weight: 200;
+}
+
+.mouse {
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    height: 80px;
+    width: 50px;
+    position: relative;
+}
+
+.move {
+    position: absolute;
+    background-color: #fff;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: move 2s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, 40px);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, 60px);
+        opacity: 0;
+    }
+}
+
+.fondoLogin {
+    background-image: url(https://images5.alphacoders.com/349/349822.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fondoRegistro {
+    background-image: url(https://images6.alphacoders.com/349/349835.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.fondoReservas {
+    background-image: url(https://www.equipotres14.com/wp-content/uploads/2019/08/381.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.flip {
+    position: relative;
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: 1em;
+    background-color: rgb(17 24 39);
+
+}
+.flip > .front {
+    color: white;
+    text-align: center;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    transition-property: transform, opacity;
+    transform: rotateY(0deg);
+}
+.flip img {
+    margin: auto;
+}
+.flip > .back {
+    color: white;
+    background-size: cover !important;
+    background-position: center !important;
+    background: rgb(17 24 39);
+    backdrop-filter: blur(1.5em);
+    border-radius: 10px;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    transition-property: transform, opacity;
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-180deg);
+    margin-top: -1px !important;
+}
+.flip:hover > .front{
+    transform: rotateY(180deg);
+}
+
+.flip:hover > .back{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.flip-vertical > .back {
+    transform: rotateX(-180deg);
+}
+
+.flip-vertical:hover >.front {
+    transform: rotateX(180deg);
+}
+
+.flip-vertical:hover >.back {
+    transform: rotateX(0deg);
+}
+
